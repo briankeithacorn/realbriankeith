@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Brian Keith",
+      "hasCanvas": false,
+      "bodyTextLen": 7252,
+      "bodyTextHash": "f89b53b567f471d354a309648a7ac811f5f086ccb442fd285f65c081daac61c5",
+      "bodyTextPrefix": "Skip to content RBK BRIAN KEITH About Manifesto Values Work Comp",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Brian Keith",
+      "hasCanvas": false,
+      "bodyTextLen": 7170,
+      "bodyTextHash": "99465df7d5dc15ff0594fb09c577d20ca75c92d6add7a35ddc32bac9b9a19cc1",
+      "bodyTextPrefix": "Skip to content RBK Talk RBK · REALBRIANKEITH Manufacturing Free",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1c1f26;
+  --color-ink-soft: #2a2e38;
+  --color-ink-muted: #3a3f4a;
+  --color-cream: #f5f0e8;
+  --color-cream-deep: #ebe4d8;
+  --color-paper: #faf7f2;
+  --color-gold: #c4a35a;
+  --color-gold-deep: #a8883e;
+  --color-gold-ink: #6f5524;
+  --color-muted: #5c5850;
+  --color-line: #d6cdbe;
+  --color-line-strong: #c4b9a6;
+
+  --color-background: #f5f0e8;
+  --color-foreground: #1c1f26;
+  --color-primary: #1c1f26;
+  --color-primary-foreground: #f5f0e8;
+  --color-accent: #c4a35a;
+  --color-accent-foreground: #1c1f26;
+  --color-border: #d6cdbe;
+  --color-card: #faf7f2;
+  --color-muted-foreground: #5c5850;
+  --color-ring: #c4a35a;
+
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-sans: "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius: 0.5rem;
+
+  --text-display: clamp(2.15rem, 1.15rem + 4.4vw, 4.35rem);
+  --text-section: clamp(1.7rem, 1.15rem + 2.1vw, 2.7rem);
+  --text-lede: clamp(1.08rem, 0.98rem + 0.5vw, 1.28rem);
+
+  --shadow-border:
+    0 0 0 1px color-mix(in oklab, var(--color-ink) 8%, transparent),
+    0 1px 2px -1px color-mix(in oklab, var(--color-ink) 8%, transparent),
+    0 8px 24px -12px color-mix(in oklab, var(--color-ink) 10%, transparent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-gold) 45%, var(--color-cream));
+    color: var(--color-ink);
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .stagger-in,
+  .stagger-in > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.stagger-in > * {
+  animation: fade-up 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stagger-in > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-in > *:nth-child(2) {
+  animation-delay: 80ms;
+}
+.stagger-in > *:nth-child(3) {
+  animation-delay: 160ms;
+}
+.stagger-in > *:nth-child(4) {
+  animation-delay: 240ms;
+}
+.stagger-in > *:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+.gold-rule {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.portrait-frame {
+  outline: 1px solid color-mix(in oklab, var(--color-gold) 55%, transparent);
+  outline-offset: -1px;
+}
+
+.prose-site p + p {
+  margin-top: 1.15em;
+}
