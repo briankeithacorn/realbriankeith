@@ -1,29 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #1c1f26;
-  --color-ink-soft: #2a2e38;
-  --color-ink-muted: #3a3f4a;
-  --color-cream: #f5f0e8;
-  --color-cream-deep: #ebe4d8;
-  --color-paper: #faf7f2;
-  --color-gold: #c4a35a;
-  --color-gold-deep: #a8883e;
-  --color-gold-ink: #6f5524;
-  --color-muted: #5c5850;
-  --color-line: #d6cdbe;
-  --color-line-strong: #c4b9a6;
+  --color-ink: #1A1D21;
+  --color-ink-soft: #2A2E33;
+  --color-ink-muted: #3A4046;
+  --color-cream: #F3EEE6;
+  --color-cream-deep: #E8E2D6;
+  --color-paper: #F8F5EF;
+  --color-steel: #5B6B7A;
+  --color-fog: #D8DEE4;
+  --color-muted: #5B6B7A;
+  --color-line: #D8DEE4;
+  --color-line-strong: #C4CCD4;
 
-  --color-background: #f5f0e8;
-  --color-foreground: #1c1f26;
-  --color-primary: #1c1f26;
-  --color-primary-foreground: #f5f0e8;
-  --color-accent: #c4a35a;
-  --color-accent-foreground: #1c1f26;
-  --color-border: #d6cdbe;
-  --color-card: #faf7f2;
-  --color-muted-foreground: #5c5850;
-  --color-ring: #c4a35a;
+  --color-background: #F3EEE6;
+  --color-foreground: #1A1D21;
+  --color-primary: #1A1D21;
+  --color-primary-foreground: #F3EEE6;
+  --color-accent: #5B6B7A;
+  --color-accent-foreground: #F3EEE6;
+  --color-border: #D8DEE4;
+  --color-card: #F8F5EF;
+  --color-muted-foreground: #5B6B7A;
+  --color-ring: #5B6B7A;
 
   --font-display: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
   --font-sans: "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
@@ -77,7 +76,7 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-gold) 45%, var(--color-cream));
+    background: color-mix(in oklab, var(--color-steel) 35%, var(--color-cream));
     color: var(--color-ink);
   }
 
@@ -85,7 +84,7 @@
   button:focus-visible,
   input:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-steel);
     outline-offset: 3px;
   }
 }
@@ -137,15 +136,15 @@
   animation-delay: 320ms;
 }
 
-.gold-rule {
+.steel-rule {
   display: block;
   width: 3rem;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--color-steel);
 }
 
 .portrait-frame {
-  outline: 1px solid color-mix(in oklab, var(--color-gold) 55%, transparent);
+  outline: 1px solid color-mix(in oklab, var(--color-steel) 55%, transparent);
   outline-offset: -1px;
 }
 
