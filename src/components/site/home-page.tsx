@@ -135,8 +135,7 @@ function Hero() {
             {SITE.headline}
           </h1>
           <p className="mt-5 max-w-xl text-lede leading-relaxed text-muted">
-            Builder of Acorn. Short human seat when Acorn is not enough. The credit layer. CMO,
-            Chang Robotics. Systems that give founders their time — and their families — back.
+            I'm building the world I want my children to inherit through consulting, AI, factories, and financing. Let's build the future together.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Button asChild>
