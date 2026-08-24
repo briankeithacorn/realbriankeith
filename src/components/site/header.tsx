@@ -81,10 +81,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" variant="gold" className="hidden sm:inline-flex">
+          <Button asChild size="sm" variant="steel" className="hidden sm:inline-flex">
             <Link to="/talk">Talk with Brian</Link>
           </Button>
-          <Button asChild size="sm" variant="gold" className="sm:hidden">
+          <Button asChild size="sm" variant="steel" className="sm:hidden">
             <Link to="/talk">Talk</Link>
           </Button>
           <button
@@ -118,7 +118,7 @@ export function SiteHeader() {
               {item.label}
             </NavHref>
           ))}
-          <Button asChild className="mt-5" variant="gold">
+          <Button asChild className="mt-5" variant="steel">
             <Link to="/talk" onClick={() => setOpen(false)}>
               Talk with Brian
             </Link>

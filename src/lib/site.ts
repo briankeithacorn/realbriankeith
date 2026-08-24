@@ -7,7 +7,7 @@ export const SITE = {
   standFor: "I stand for manufacturing freedom for American small business owners.",
   headline: "Manufacturing Freedom for American Small Business Owners",
   description:
-    "Fractional COO. Builder of Acorn. Systems that give founders their time — and their families — back.",
+    "Builder of Acorn. Four ways I manufacture freedom for American small business owners.",
 } as const;
 
 export const SOCIALS = [
@@ -23,7 +23,7 @@ export const SOCIALS = [
   },
   {
     label: "YouTube",
-    handle: "Brian Keith – builder of Acorn",
+    handle: "@briankeithai",
     href: "https://www.youtube.com/@briankeithai",
   },
 ] as const;
@@ -32,13 +32,13 @@ export const COMPANY_LINKS = [
   { label: "Acorn", href: "https://buyacorn.com" },
   { label: "Red Beard Consulting", href: "https://redbeardconsulting.com" },
   { label: "Lenders Online Training", href: "https://lendersonlinetraining.com" },
+  { label: "Chang Robotics", href: "https://changrobotics.com" },
 ] as const;
 
 export const NAV = [
   { label: "About", hash: "about" },
   { label: "Manifesto", hash: "manifesto" },
   { label: "Values", hash: "values" },
-  { label: "Work", hash: "work" },
   { label: "Companies", hash: "companies" },
   { label: "Past", hash: "past" },
   { label: "Process", hash: "how-i-work" },
@@ -128,41 +128,28 @@ export const OWNED: CompanyCard[] = [
   {
     name: "Acorn",
     role: "Founder & architect",
-    impact: "Sovereign AI Chief of Staff for seven-figure founders. Humans orient. Agents execute. Trust is earned.",
+    impact:
+      "Sovereign AI on the customer’s own server. Humans orient. Agents execute. Trust is earned.",
     href: "https://buyacorn.com",
   },
   {
     name: "Red Beard Consulting",
-    role: "Founder / Fractional COO",
-    impact: "High-grade fractional COO talent and systems when a company is not yet ready for a full-time executive at my level.",
+    role: "Short human seat",
+    impact: "When Acorn is not enough, I sit in for a short stretch and install the system. Then I leave.",
     href: "https://redbeardconsulting.com",
   },
   {
     name: "Lenders Online Training",
-    role: "Operations / leadership",
-    impact: "Credit-analysis training that strengthens the community banks, credit unions, and farm-credit lenders who finance American small businesses.",
+    role: "The credit layer",
+    impact:
+      "I run the school that trains community banks, credit unions, and farm credit to underwrite, so American small businesses actually get capital.",
     href: "https://lendersonlinetraining.com",
   },
-];
-
-export const FRACTIONAL: CompanyCard[] = [
   {
     name: "Chang Robotics",
-    role: "Chief Marketing Officer",
-    impact: "Faith-based Factory 5.0 automation. Re-industrialize the US, raise workers up.",
+    role: "CMO",
+    impact: "Factory 5.0. Re-industrialize the US, raise workers up.",
     href: "https://changrobotics.com",
     related: { label: "ReForge Podcast with Matthew Chang", href: "https://www.thereforgepodcast.com" },
-  },
-  {
-    name: "Aqua Survey Inc.",
-    role: "Systems Consultant",
-    impact: "Ecotoxicology and on-water survey. I do not do the field science. I build the teams and systems.",
-    href: "https://aquasurvey.com",
-  },
-  {
-    name: "Farrow Skincare",
-    role: "Current client",
-    impact: "Regenerative, lard-based skincare. Founded by Charles Mayfield.",
-    href: "https://farrow.shop",
   },
 ];
