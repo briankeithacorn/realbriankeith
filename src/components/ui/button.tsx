@@ -12,7 +12,7 @@ const buttonVariants = cva(
           "bg-ink text-cream hover:bg-ink-soft border border-ink",
         secondary:
           "bg-transparent text-ink border border-ink/20 hover:border-ink/45 hover:bg-cream-deep",
-        gold: "bg-gold text-ink border border-gold hover:bg-gold-deep hover:border-gold-deep",
+        steel: "bg-steel text-cream border border-steel hover:bg-ink hover:border-ink",
         ghost:
           "bg-transparent text-cream border border-cream/25 hover:border-cream/55 hover:bg-cream/5",
         ghostInk:
