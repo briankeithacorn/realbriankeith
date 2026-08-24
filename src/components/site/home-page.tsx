@@ -5,13 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IconLinkedIn, IconX, IconYouTube } from "@/components/site/icons";
 import {
-  FRACTIONAL,
   OWNED,
   PROCESS,
   SITE,
   SOCIALS,
   VALUES,
-  type CompanyCard,
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +24,7 @@ function Eyebrow({
     <p
       className={cn(
         "text-xs font-medium tracking-widest uppercase",
-        onDark ? "text-gold" : "text-gold-ink",
+        onDark ? "text-fog" : "text-steel",
       )}
     >
       {children}
@@ -73,40 +71,11 @@ function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("inline-flex items-center gap-1 hover:text-gold-deep", className)}
+      className={cn("inline-flex items-center gap-1 hover:text-steel", className)}
     >
       {children}
       <ArrowUpRight className="size-3.5" strokeWidth={1.75} aria-hidden="true" />
     </a>
-  );
-}
-
-function CompanyCardView({ company, dark = false }: { company: CompanyCard; dark?: boolean }) {
-  return (
-    <article
-      className={cn(
-        "flex h-full flex-col rounded-lg bg-paper p-6 shadow-[var(--shadow-border)]",
-        dark && "bg-ink-soft shadow-none ring-1 ring-cream/10",
-      )}
-    >
-      <p className="text-xs font-medium tracking-widest text-gold-ink uppercase">{company.role}</p>
-      <h3 className="font-display mt-2 text-2xl font-medium tracking-tight">{company.name}</h3>
-      <p className={cn("mt-3 flex-1 text-base leading-relaxed", dark ? "text-cream/75" : "text-muted")}>
-        {company.impact}
-      </p>
-      <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-        {company.href ? (
-          <ExternalLink href={company.href} className="font-medium text-ink">
-            Visit site
-          </ExternalLink>
-        ) : null}
-        {company.related ? (
-          <ExternalLink href={company.related.href} className="text-muted">
-            {company.related.label}
-          </ExternalLink>
-        ) : null}
-      </div>
-    </article>
   );
 }
 
@@ -128,7 +97,7 @@ function NewsletterForm({ compact = false }: { compact?: boolean }) {
 
   if (done) {
     return (
-      <p className="rounded-md border border-gold/40 bg-cream-deep px-4 py-4 text-ink">
+      <p className="rounded-md border border-steel/40 bg-cream-deep px-4 py-4 text-ink">
         You’re on the list. The weekly note will start arriving once the list is wired.
       </p>
     );
@@ -166,8 +135,8 @@ function Hero() {
             {SITE.headline}
           </h1>
           <p className="mt-5 max-w-xl text-lede leading-relaxed text-muted">
-            Fractional COO • Builder of Acorn (Sovereign AI Chief of Staff) • CMO, Chang
-            Robotics • Systems that give founders their time — and their families — back.
+            Builder of Acorn. Short human seat when Acorn is not enough. The credit layer. CMO,
+            Chang Robotics. Systems that give founders their time — and their families — back.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Button asChild>
@@ -193,9 +162,9 @@ function Hero() {
             <img
               src="/portrait.jpg"
               alt="Black-and-white portrait of Brian Keith, thoughtful, hand near chin"
-              width={1152}
-              height={1728}
-              className="aspect-[2/3] w-full object-cover object-[center_12%]"
+              width={1280}
+              height={1280}
+              className="aspect-[2/3] w-full object-cover object-[center_18%]"
             />
           </figure>
         </div>
@@ -213,7 +182,7 @@ function WhoIAm() {
           <h2 className="font-display mt-3 text-section font-medium tracking-tight">
             Two-business-owner family. Then the work of making myself redundant.
           </h2>
-          <span className="gold-rule mt-6" />
+          <span className="steel-rule mt-6" />
         </div>
         <div className="prose-site max-w-2xl text-lede leading-relaxed text-ink/90">
           <p>
@@ -222,12 +191,10 @@ function WhoIAm() {
             immersion in the small-business ethos shaped everything that followed. I studied
             entrepreneurship, worked at an internet marketing firm, and in 2012 founded Red
             Beard Consulting. What began as marketing automation on the Keap platform evolved
-            into full-service fractional COO work: everything around the founder’s core offer
-            becomes my problem.
+            into full-service fractional COO work — the systems around the founder’s core offer.
           </p>
           <p>
-            I currently lead 6 companies across roles from COO to CMO to Systems Consultant. I
-            make myself redundant. The goal is never to stay in the middle of the problem.
+            I make myself redundant. The goal is never to stay in the middle of the problem.
           </p>
           <Button asChild variant="secondary" className="mt-6">
             <a href="#manifesto">
@@ -248,7 +215,7 @@ function Manifesto() {
       <h2 className="font-display mt-4 max-w-4xl text-section font-medium tracking-tight">
         I stand for manufacturing freedom for American small business owners.
       </h2>
-      <span className="gold-rule mt-6" />
+      <span className="steel-rule mt-6" />
       <div className="prose-site mt-10 max-w-3xl text-lede leading-relaxed text-cream/88">
         <p>
           Our children will inherit the world we hand them. There is no one coming to save us.
@@ -263,7 +230,7 @@ function Manifesto() {
           firefighting.
         </p>
         <p>I manufacture that freedom in three ways:</p>
-        <ul className="mt-4 space-y-4 border-l border-gold/40 pl-5">
+        <ul className="mt-4 space-y-4 border-l border-steel/40 pl-5">
           <li>
             <strong className="text-cream">Acorn</strong> puts cutting-edge AI under the
             founder’s control on their own server. Humans orient. Agents execute. Trust is
@@ -312,9 +279,9 @@ function CoreValues() {
         {VALUES.map((value) => (
           <li
             key={value.number}
-            className="flex gap-5 border-l-2 border-gold py-6 pl-5 first:pt-1 last:pb-1 sm:gap-7 sm:pl-7"
+            className="flex gap-5 border-l-2 border-steel py-6 pl-5 first:pt-1 last:pb-1 sm:gap-7 sm:pl-7"
           >
-            <span className="font-display w-6 shrink-0 text-2xl leading-none font-medium text-gold sm:text-3xl">
+            <span className="font-display w-6 shrink-0 text-2xl leading-none font-medium text-steel sm:text-3xl">
               {value.number}
             </span>
             <div>
@@ -322,7 +289,7 @@ function CoreValues() {
                 {value.name}
               </h3>
               {value.latin ? (
-                <p className="font-display mt-1 text-base italic text-gold-ink">{value.latin}</p>
+                <p className="font-display mt-1 text-base italic text-steel">{value.latin}</p>
               ) : null}
               <p className="mt-2 max-w-xl text-base text-muted">{value.line}</p>
             </div>
@@ -333,84 +300,80 @@ function CoreValues() {
   );
 }
 
-function WhatIDo() {
-  const pillars = [
-    {
-      name: "Acorn",
-      href: "https://buyacorn.com",
-      line: "AI Chief of Staff for seven-figure founders. Runs on the user’s own Amazon server. Slack-native. Flat pricing, no usage meters. Waitlist. I am founder and architect. Humans orient. Agents execute. Trust is earned.",
-    },
-    {
-      name: "Red Beard Consulting",
-      href: "https://redbeardconsulting.com",
-      line: "Fractional COO practice founded 2012. Seven-figure founder-led companies. Your problems are now my problems.",
-    },
-    {
-      name: "Lenders Online Training",
-      href: "https://lendersonlinetraining.com",
-      line: "Credit-analysis training for community banks, credit unions, and farm-credit. Flagship: Tax Return & Financial Statement Analysis.",
-    },
-  ];
-
+function FourWays() {
   return (
-    <Section id="work" className="bg-cream-deep">
-      <Eyebrow>What I Do</Eyebrow>
+    <Section id="companies" className="bg-cream-deep">
+      <div id="work" />
+      <Eyebrow>Four ways</Eyebrow>
       <h2 className="font-display mt-3 max-w-3xl text-section font-medium tracking-tight">
-        Three pillars. One job: manufacture freedom.
+        Four ways I manufacture freedom.
       </h2>
-      <div className="mt-12 grid gap-5 lg:grid-cols-3">
-        {pillars.map((p, i) => (
-          <article key={p.name} className="flex flex-col rounded-lg bg-paper p-6 shadow-[var(--shadow-border)]">
-            <span className="font-display text-sm text-gold-ink">{String(i + 1).padStart(2, "0")}</span>
-            <h3 className="font-display mt-3 text-2xl font-medium tracking-tight">{p.name}</h3>
-            <p className="mt-3 flex-1 leading-relaxed text-muted">{p.line}</p>
-            <ExternalLink href={p.href} className="mt-5 font-medium text-ink">
-              {p.href.replace("https://", "")}
-            </ExternalLink>
+      <p className="mt-4 max-w-2xl text-muted">
+        These are companies under me. They are not my identity. I am RBK. This is not a client
+        list.
+      </p>
+
+      <div className="mt-12 grid gap-5 md:grid-cols-2">
+        {OWNED.map((c, i) => (
+          <article
+            key={c.name}
+            className="flex h-full flex-col rounded-lg bg-paper p-6 shadow-[var(--shadow-border)]"
+          >
+            <span className="font-display text-sm text-steel">{String(i + 1).padStart(2, "0")}</span>
+            <p className="mt-3 text-xs font-medium tracking-widest text-steel uppercase">{c.role}</p>
+            <h3 className="font-display mt-2 text-2xl font-medium tracking-tight">{c.name}</h3>
+            <p className="mt-3 flex-1 leading-relaxed text-muted">{c.impact}</p>
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              {c.href ? (
+                <ExternalLink href={c.href} className="font-medium text-ink">
+                  {c.href.replace("https://", "")}
+                </ExternalLink>
+              ) : null}
+              {c.related ? (
+                <ExternalLink href={c.related.href} className="text-muted">
+                  {c.related.label}
+                </ExternalLink>
+              ) : null}
+            </div>
           </article>
         ))}
       </div>
-    </Section>
-  );
-}
 
-function Companies() {
-  return (
-    <Section id="companies">
-      <Eyebrow>Current Companies & Roles</Eyebrow>
-      <h2 className="font-display mt-3 max-w-3xl text-section font-medium tracking-tight">
-        Owned. Fractional.
-      </h2>
-      <p className="mt-4 max-w-2xl text-muted">
-        RBC, LOT, and Acorn are companies under me. They are not my identity. I am RBK.
-      </p>
-
-      <h3 className="mt-12 text-xs font-medium tracking-widest text-gold-ink uppercase">Owned</h3>
-      <div className="mt-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {OWNED.map((c) => (
-          <CompanyCardView key={c.name} company={c} />
-        ))}
-      </div>
-
-      <h3 className="mt-12 text-xs font-medium tracking-widest text-gold-ink uppercase">
-        Fractional / client
-      </h3>
-      <div className="mt-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {FRACTIONAL.map((c) => (
-          <CompanyCardView key={c.name} company={c} />
-        ))}
-      </div>
+      <article
+        id="shop"
+        className="mt-12 rounded-lg bg-paper p-6 shadow-[var(--shadow-border)] sm:p-8"
+      >
+        <Eyebrow>Shop seat</Eyebrow>
+        <h3 className="font-display mt-3 text-2xl font-medium tracking-tight sm:text-3xl">
+          Bring me into your shop.
+        </h3>
+        <div className="prose-site mt-4 max-w-2xl text-lede leading-relaxed text-ink/90">
+          <p>
+            COO or CMO seat. $20k a month. Explicit three-month deals — we name what can
+            actually get done in a quarter.
+          </p>
+          <p>
+            Want the system without my calendar? Acorn at $5k a month, plus a few hours of me.
+          </p>
+        </div>
+        <Button asChild className="mt-6">
+          <Link to="/talk">
+            Talk with Brian
+            <ArrowRight className="size-4" strokeWidth={1.75} />
+          </Link>
+        </Button>
+      </article>
     </Section>
   );
 }
 
 function PastWork() {
   return (
-    <Section id="past" className="bg-cream-deep">
+    <Section id="past">
       <Eyebrow>Past Work</Eyebrow>
       <h2 className="font-display mt-3 text-section font-medium tracking-tight">The flagship I am proud of.</h2>
       <article className="mt-10 max-w-3xl rounded-lg bg-paper p-6 shadow-[var(--shadow-border)] sm:p-8">
-        <p className="text-xs font-medium tracking-widest text-gold-ink uppercase">
+        <p className="text-xs font-medium tracking-widest text-steel uppercase">
           Fractional COO · through early 2026
         </p>
         <h3 className="font-display mt-3 text-3xl font-medium tracking-tight">Ovadia Heart Health</h3>
@@ -439,7 +402,7 @@ function HowIWork() {
       <ol className="mt-12 divide-y divide-cream/10 border-y border-cream/10">
         {PROCESS.map((step) => (
           <li key={step.number} className="grid grid-cols-[auto_1fr] gap-5 py-7 sm:gap-8">
-            <span className="font-display text-3xl leading-none font-medium text-gold">
+            <span className="font-display text-3xl leading-none font-medium text-fog">
               {step.number}
             </span>
             <div>
@@ -453,7 +416,7 @@ function HowIWork() {
         Success is human: you can see it in their eyes. Reduced late-night worry, presence with
         family, a shrinking worry window.
       </p>
-      <Button asChild variant="gold" size="lg" className="mt-8">
+      <Button asChild variant="steel" size="lg" className="mt-8">
         <Link to="/talk">Talk with Brian</Link>
       </Button>
     </Section>
@@ -486,7 +449,7 @@ function StayConnected() {
         </div>
         <div className="space-y-8">
           <div>
-            <p className="text-xs font-medium tracking-widest text-gold-ink uppercase">Social</p>
+            <p className="text-xs font-medium tracking-widest text-steel uppercase">Social</p>
             <ul id="socials" className="mt-4 space-y-3">
               {SOCIALS.map((s) => {
                 const Icon = SOCIAL_ICONS[s.label];
@@ -496,7 +459,7 @@ function StayConnected() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex min-h-12 items-center gap-3 text-ink hover:text-gold-deep"
+                      className="flex min-h-12 items-center gap-3 text-ink hover:text-steel"
                     >
                       <span className="inline-flex size-10 items-center justify-center rounded-md border border-line bg-paper">
                         <Icon className="size-4" />
@@ -512,7 +475,7 @@ function StayConnected() {
             </ul>
           </div>
           <div>
-            <p className="text-xs font-medium tracking-widest text-gold-ink uppercase">
+            <p className="text-xs font-medium tracking-widest text-steel uppercase">
               Speaking & booking
             </p>
             <p className="mt-3 max-w-sm text-muted">
@@ -524,7 +487,7 @@ function StayConnected() {
             </Button>
           </div>
           <div>
-            <p className="text-xs font-medium tracking-widest text-gold-ink uppercase">
+            <p className="text-xs font-medium tracking-widest text-steel uppercase">
               Recommended reading
             </p>
             <p className="mt-3">
@@ -533,7 +496,7 @@ function StayConnected() {
                 href="https://www.amazon.com/Risk-Taking-Biblical-Pursuing-Kingdom-Building/dp/B0FSY88H5Y"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="italic underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
+                className="italic underline decoration-steel/60 underline-offset-4 hover:decoration-steel"
               >
                 Risk-Taking is Biblical
               </a>
@@ -552,8 +515,7 @@ export function HomePage() {
       <WhoIAm />
       <Manifesto />
       <CoreValues />
-      <WhatIDo />
-      <Companies />
+      <FourWays />
       <PastWork />
       <HowIWork />
       <StayConnected />
