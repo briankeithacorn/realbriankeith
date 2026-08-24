@@ -135,7 +135,7 @@ function Hero() {
             {SITE.headline}
           </h1>
           <p className="mt-5 max-w-xl text-lede leading-relaxed text-muted">
-            Our children will inherit the world we design
+            Our children will inherit the world we design.
             <br />
             Let's build it together.
           </p>
