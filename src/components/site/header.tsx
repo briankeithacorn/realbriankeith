@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { NAV, SITE } from "@/lib/site";
+import { NAV } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -57,12 +57,16 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5">
         <Link
           to="/"
-          className="flex items-baseline gap-2 no-underline"
+          className="flex items-center gap-2.5 no-underline"
           aria-label="Brian Keith — home"
         >
-          <span className="font-display text-lg font-semibold tracking-tight text-ink">
-            {SITE.mark}
-          </span>
+          <img
+            src="/favicon-32.png"
+            alt=""
+            width={32}
+            height={32}
+            className="size-8 rounded-[7px]"
+          />
           <span className="hidden text-xs tracking-widest text-muted uppercase sm:inline">
             Brian Keith
           </span>
